@@ -7,12 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Team.destroy_all
 
-team_list = [
-  [ "Celtics", "Boston", 60 ],
-  [ "Trailblazers", "Portland", 60 ],
-  [ "Lakers", "Los Angeles", 12 ],
-]
-
-team_list.each do |name, city, wins|
-  Team.create( name: name, city: city, wins: wins )
+50.times do |index|
+  Team.create!(name: Faker::Team.creature,
+                        city: Faker::Team.state,
+                        wins: Faker::Number.between(1, 82))
 end
+
+p "Created #{Team.count} teams"

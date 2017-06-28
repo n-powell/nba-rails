@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
   def index
     @teams = Team.alpha
+    @team = Team.find(rand(1..50))
   end
 
   def show
