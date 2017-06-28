@@ -2,7 +2,7 @@
 
 <ul>
   <% @teams.each do |team| %>
-    <li><%= link_to team.city, team_path(team) %> - <%= link_to team.name, team_path(team) %> - <%= link_to team.wins, team_path(team) %></li>
+    <li><%= link_to team.city, team_path(team) %> - <%= link_to team.name.capitalize, team_path(team) %> - <%= link_to team.wins, team_path(team) %></li>
   <% end %>
 </ul>
 
@@ -12,6 +12,6 @@
 Check out the featured team!
 <p>
   <%= link_to @team.city, team_path(@team) %> -
-  <%= link_to @team.name, team_path(@team) %> -
+  <%= link_to @team.name.capitalize, team_path(@team) %> -
   <%= link_to @team.wins, team_path(@team) %>
 </p>

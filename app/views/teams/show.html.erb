@@ -1,8 +1,29 @@
-<h1><%= @team.name %></h1>
-
+<h1><%= @team.city %> <%= @team.name.capitalize %></h1>
+<p>Team Wins: <%= @team.wins %></p>
 <p><%= link_to "Edit", edit_team_path(@team) %></p>
 <p><%= link_to "Delete", team_path(@team),
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
+
+<% if @team.reviews.any? %>
+  <h4>Article reviews</h4>
+  <ul>
+    <% @team.reviews.each do |review| %>
+      <li>
+        <div class="well">
+          <%= review.comment %><br>
+          <p>
+            Projected wins: <%= review.rating %><br>
+          </p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>
+
+<p><%= link_to "Add review", new_team_review_path(@team) %></p>
+
 
 <p><%= link_to "Return to teams", teams_path %></p>
