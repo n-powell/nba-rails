@@ -1,0 +1,12 @@
+<h1>Edit team</h1>
+
+<% if @team.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @team.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render "form" %>

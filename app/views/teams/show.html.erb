@@ -1,0 +1,8 @@
+<h1><%= @team.name %></h1>
+
+<p><%= link_to "Edit", edit_team_path(@team) %></p>
+<p><%= link_to "Delete", team_path(@team),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return to teams", teams_path %></p>

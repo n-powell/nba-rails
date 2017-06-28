@@ -1,0 +1,12 @@
+<h1>New Team</h1>
+
+<% if @team.errors.any? %>
+  <h3>Oops there were some errors. Please try again:</h3>
+  <ul>
+    <% @team.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render "form" %>

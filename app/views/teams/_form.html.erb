@@ -1,0 +1,9 @@
+<%= render "layouts/errors", :object => @team %>
+
+<%= form_for @team do |f| %>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
